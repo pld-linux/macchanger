@@ -7,6 +7,7 @@ License:	GPL
 Group:		Applications/Networking
 Vendor:		Alvaro Lopez Ortega <alvaro@alobbs.com>
 Source0:	http://savannah.nongnu.org/download/macc/%{name}.pkg/%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	37b6b3e83bf2e02b40628082e48d257a
 URL:		http://www.alobbs.com/modules.php?op=modload&name=macc&file=index
 BuildRequires:	autoconf
 BuildRequires:	automake
