@@ -32,9 +32,10 @@ Mo¿liwo¶ci programu:
 - wy¶wietlanie listy MAC-ów danego producenta, do wyboru.
 
 %prep
-%setup -q -n %{name}-%{version}
+%setup -q
 
 %build
+rm -f missing
 %{__libtoolize}
 %{__aclocal}
 %{__autoheader}
@@ -46,7 +47,8 @@ Mo¿liwo¶ci programu:
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
