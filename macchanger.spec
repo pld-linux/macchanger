@@ -1,12 +1,12 @@
 Summary:	Utility for viewing/manipulating the MAC address of network interfaces
 Summary(pl):	Narzêdzie do ogl±dania/modyfikowania adresów MAC interfejsów sieciowych
 Name:		macchanger
-Version:	1.2.0
+Version:	1.3.0
 Release:	1
 License:	GPL
 Group:		Applications/Networking
 Vendor:		Alvaro Lopez Ortega <alvaro@alobbs.com>
-Source0:	http://savannah.nongnu.org/download/macc/%{name}.pkg/1.2.0/%{name}-%{version}.tar.gz
+Source0:	http://savannah.nongnu.org/download/macc/%{name}.pkg/%{version}/%{name}-%{version}.tar.gz
 URL:		http://www.alobbs.com/modules.php?op=modload&name=macc&file=index
 BuildRequires:	autoconf
 BuildRequires:	automake
