@@ -1,4 +1,5 @@
 Summary:	Utility for viewing/manipulating the MAC address of network interfaces
+Summary(pl):	Narzêdzie do ogl±dania/manipulacji na adresach MAC na interfejsach
 Name:		macchanger
 Version:	1.2.0
 Release:	1
@@ -16,6 +17,15 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 - Set another MAC of the same vendor
 - Set a MAC of the same kind (eg: wireless card)
 - Display a vendor MAC list (today, 900 items) to choose from
+
+%description -l pl
+Mo¿liwo¶ci programu:
+- ustawienia adresu MAC na interfejsie sieciowym,
+- ustawianie adresu MAC losowo,
+- ustawianie adresu MAC innego producenta,
+- ustawianie innego adresu MAC tego samego producenta,
+- ustawianie MAC-a tego samego typu (np. karta bezprzewodowa),
+- wy¶wietlanie listy MAC-ów danego producenta, do wyboru.
 
 %prep
 %setup -q -n %{name}-%{version}
