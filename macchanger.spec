@@ -1,5 +1,5 @@
 Summary:	Utility for viewing/manipulating the MAC address of network interfaces
-Summary(pl):	Narzêdzie do ogl±dania/manipulacji na adresach MAC na interfejsach
+Summary(pl):	Narzêdzie do ogl±dania/modyfikowania adresów MAC interfejsów sieciowych
 Name:		macchanger
 Version:	1.2.0
 Release:	1
@@ -8,6 +8,9 @@ Group:		Applications/Networking
 Vendor:		Alvaro Lopez Ortega <alvaro@alobbs.com>
 Source0:	http://savannah.nongnu.org/download/macc/%{name}.pkg/1.2.0/%{name}-%{version}.tar.gz
 URL:		http://www.alobbs.com/modules.php?op=modload&name=macc&file=index
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -20,7 +23,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description -l pl
 Mo¿liwo¶ci programu:
-- ustawienia adresu MAC na interfejsie sieciowym,
+- ustawianie adresu MAC interfejsu sieciowego,
 - ustawianie adresu MAC losowo,
 - ustawianie adresu MAC innego producenta,
 - ustawianie innego adresu MAC tego samego producenta,
@@ -51,5 +54,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog INSTALL NEWS README
 %attr(755,root,root) %{_bindir}/macchanger
-%{_datadir}/%{name}/*
+%{_datadir}/%{name}
 %{_mandir}/man1/*
