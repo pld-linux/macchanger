@@ -4,8 +4,8 @@ Name:		macchanger
 Version:	1.5.0
 Release:	1
 License:	GPL
-Group:		Applications/Networking
 Vendor:		Alvaro Lopez Ortega <alvaro@alobbs.com>
+Group:		Applications/Networking
 Source0:	ftp://ftp.gnu.org/gnu/macchanger/%{name}-%{version}.tar.gz
 # Source0-md5:	79b7cdaeca3d8ebafa764c4b0dd03ab7
 URL:		http://www.alobbs.com/modules.php?op=modload&name=macc&file=index
@@ -35,7 +35,6 @@ Mo¿liwo¶ci programu:
 %setup -q
 
 %build
-rm -f missing
 %{__libtoolize}
 %{__aclocal}
 %{__autoheader}
@@ -59,4 +58,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/macchanger
 %{_datadir}/%{name}
 %{_mandir}/man1/*
-%{_infodir}/%{name}.info.gz
+%{_infodir}/%{name}.info*
