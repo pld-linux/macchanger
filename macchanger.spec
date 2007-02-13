@@ -1,5 +1,5 @@
 Summary:	Utility for viewing/manipulating the MAC address of network interfaces
-Summary(pl.UTF-8):   Narzędzie do oglądania/modyfikowania adresów MAC interfejsów sieciowych
+Summary(pl.UTF-8):	Narzędzie do oglądania/modyfikowania adresów MAC interfejsów sieciowych
 Name:		macchanger
 Version:	1.5.0
 Release:	1
