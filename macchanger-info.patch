@@ -1,0 +1,15 @@
+--- macchanger-1.7.0/doc/macchanger.texi.orig	2013-04-18 07:27:17.000000000 +0200
++++ macchanger-1.7.0/doc/macchanger.texi	2025-05-15 19:20:49.887060169 +0200
+@@ -31,10 +31,9 @@ approved by the Foundation.
+ @end quotation
+ @end copying
+ 
+-@dircategory Networking
+-
++@dircategory Net utilities:
+ @direntry
+-* macchanger: (macchanger).             Utility for viewing MAC address
++* macchanger: (macchanger).		Utility for viewing MAC address
+ @end direntry
+ 
+ @titlepage

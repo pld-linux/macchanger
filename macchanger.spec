@@ -1,17 +1,18 @@
 Summary:	Utility for viewing/manipulating the MAC address of network interfaces
 Summary(pl.UTF-8):	Narzędzie do oglądania/modyfikowania adresów MAC interfejsów sieciowych
 Name:		macchanger
-Version:	1.5.0
+Version:	1.7.0
 Release:	1
-License:	GPL
-Vendor:		Alvaro Lopez Ortega <alvaro@alobbs.com>
+License:	GPL v2+
 Group:		Applications/Networking
-Source0:	http://ftp.gnu.org/gnu/macchanger/%{name}-%{version}.tar.gz
-# Source0-md5:	79b7cdaeca3d8ebafa764c4b0dd03ab7
-URL:		http://www.alobbs.com/modules.php?op=modload&name=macc&file=index
-BuildRequires:	autoconf
+#Source0Download: https://github.com/alobbs/macchanger/releases
+Source0:	https://github.com/alobbs/macchanger/releases/download/%{version}/%{name}-%{version}.tar.gz
+# Source0-md5:	ca56f16142914337391dac91603eb332
+Patch0:		%{name}-info.patch
+URL:		http://www.gnu.org/software/macchanger
+BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	libtool
+BuildRequires:	texinfo
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,14 +34,15 @@ Możliwości programu:
 
 %prep
 %setup -q
+%patch -P0 -p1
 
 %build
-%{__libtoolize}
 %{__aclocal}
 %{__autoheader}
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	--disable-silent-rules
 %{__make}
 
 %install
@@ -52,10 +54,16 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post	-p /sbin/postshell
+-/usr/sbin/fix-info-dir -c %{_infodir}
+
+%postun	-p /sbin/postshell
+-/usr/sbin/fix-info-dir -c %{_infodir}
+
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README
+%doc AUTHORS ChangeLog README
 %attr(755,root,root) %{_bindir}/macchanger
 %{_datadir}/%{name}
-%{_mandir}/man1/*
-%{_infodir}/%{name}.info*
+%{_mandir}/man1/macchanger.1*
+%{_infodir}/macchanger.info*
